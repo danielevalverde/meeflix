@@ -1,0 +1,336 @@
+Started GET "/" for ::1 at 2020-07-28 17:45:07 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.5ms | Allocations: 469)
+Completed 200 OK in 24ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 2682)
+
+
+Started GET "/series" for ::1 at 2020-07-28 17:52:19 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.2) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.2) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSeries (20200728205150)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "series" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "picture" varchar, "rating" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200728205150"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-28 20:52:38.006925"], ["updated_at", "2020-07-28 20:52:38.006925"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/series" for ::1 at 2020-07-28 17:55:48 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1526)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/daniele/Documentos/meeflix/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.0
+Time: 1220ms
+Built at: 2020-07-28 17:55:50
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 2044ms (Views: 2041.9ms | ActiveRecord: 0.3ms | Allocations: 24001)
+
+
+Started GET "/series/new" for ::1 at 2020-07-28 17:55:58 -0300
+Processing by SeriesController#new as HTML
+  Rendering series/new.html.erb within layouts/application
+  Rendered series/_form.html.erb (Duration: 8.9ms | Allocations: 5853)
+  Rendered series/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 6220)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 13.6ms | ActiveRecord: 0.6ms | Allocations: 15203)
+
+
+Started POST "/series" for ::1 at 2020-07-28 17:56:55 -0300
+Processing by SeriesController#create as HTML
+  Parameters: {"authenticity_token"=>"sA+yoSntKV6c6ARAfOdK0AU2D+DwWG7l5pIb0fjEPFhZMaksVKn4BqCu3BHxn02hBVCDw4tlREZNVgKOGwsCxw==", "series"=>{"name"=>"Modern Love", "description"=>"it's about love stories", "picture"=>"", "rating"=>""}, "commit"=>"Create Series"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/series_controller.rb:30:in `block in create'
+  [1m[36mSeries Create (0.3ms)[0m  [1m[32mINSERT INTO "series" ("name", "description", "picture", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Modern Love"], ["description", "it's about love stories"], ["picture", ""], ["created_at", "2020-07-28 20:56:55.941560"], ["updated_at", "2020-07-28 20:56:55.941560"]]
+  ↳ app/controllers/series_controller.rb:30:in `block in create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/series_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/series/1
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms | Allocations: 4313)
+
+
+Started GET "/series/1" for ::1 at 2020-07-28 17:56:55 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 322)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 5541)
+
+
+Started GET "/series/1/edit" for ::1 at 2020-07-28 17:57:02 -0300
+Processing by SeriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/edit.html.erb within layouts/application
+  Rendered series/_form.html.erb (Duration: 4.9ms | Allocations: 1247)
+  Rendered series/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1523)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.2ms | Allocations: 5999)
+
+
+Started GET "/series/1" for ::1 at 2020-07-28 17:57:13 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 89)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 4412)
+
+
+Started GET "/series" for ::1 at 2020-07-28 17:57:19 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 803)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 4589)
+
+
+Started GET "/series" for ::1 at 2020-07-28 18:21:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SeriesController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3457)
+
+
+  
+NameError (uninitialized constant #<Class:0x00007f0af0c4b1a0>::PictureUploader
+Did you mean?  Series::Preloader):
+  
+app/models/series.rb:2:in `<class:Series>'
+app/models/series.rb:1:in `<top (required)>'
+app/controllers/series_controller.rb:7:in `index'
+Started GET "/series" for ::1 at 2020-07-28 18:22:10 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 7091)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 24.2ms | ActiveRecord: 0.6ms | Allocations: 17297)
+
+
+Started GET "/series/1" for ::1 at 2020-07-28 18:22:12 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 348)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 5572)
+
+
+Started GET "/series/1/edit" for ::1 at 2020-07-28 18:22:13 -0300
+Processing by SeriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/edit.html.erb within layouts/application
+  Rendered series/_form.html.erb (Duration: 6.3ms | Allocations: 4193)
+  Rendered series/edit.html.erb within layouts/application (Duration: 7.3ms | Allocations: 4618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.1ms | Allocations: 9095)
+
+
+Started GET "/series/1" for ::1 at 2020-07-28 18:22:27 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.3ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 4458)
+
+
+Started GET "/series" for ::1 at 2020-07-28 18:22:56 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.3ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 829)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 4613)
+
+
+Started GET "/series/1/edit" for ::1 at 2020-07-28 18:23:00 -0300
+Processing by SeriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/edit.html.erb within layouts/application
+  Rendered series/_form.html.erb (Duration: 3.3ms | Allocations: 1216)
+  Rendered series/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1347)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 5666)
+
+
+Started PATCH "/series/1" for ::1 at 2020-07-28 18:23:09 -0300
+Processing by SeriesController#update as HTML
+  Parameters: {"authenticity_token"=>"+gwocTVdrf/2WBdbuMQSqGaQ6P5r+1ceCHGBlSKHzp3u+LiXDWTBHBX10sLQRhK2uMAusSVRQPD7eZJ1USa3ow==", "series"=>{"name"=>"Modern Love", "description"=>"it's about love stories", "picture"=>#<ActionDispatch::Http::UploadedFile:0x000055f38b0b72f8 @tempfile=#<Tempfile:/tmp/RackMultipart20200728-30235-1p03iip.png>, @original_filename="Captura de tela de 2020-07-11 08-56-47.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"series[picture]\"; filename=\"Captura de tela de 2020-07-11 08-56-47.png\"\r\nContent-Type: image/png\r\n">, "rating"=>""}, "commit"=>"Update Series", "id"=>"1"}
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/series_controller.rb:44:in `block in update'
+  [1m[36mSeries Update (0.3ms)[0m  [1m[33mUPDATE "series" SET "picture" = ?, "updated_at" = ? WHERE "series"."id" = ?[0m  [["picture", "Captura_de_tela_de_2020-07-11_08-56-47.png"], ["updated_at", "2020-07-28 21:23:09.468035"], ["id", 1]]
+  ↳ app/controllers/series_controller.rb:44:in `block in update'
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/series_controller.rb:44:in `block in update'
+Redirected to http://localhost:3000/series/1
+Completed 302 Found in 22ms (ActiveRecord: 7.5ms | Allocations: 10702)
+
+
+Started GET "/series/1" for ::1 at 2020-07-28 18:23:09 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 157)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 4488)
+
+
+Started GET "/series/1" for ::1 at 2020-07-28 18:27:18 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 420)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 5683)
+
+
+Started GET "/" for 127.0.0.1 at 2020-07-30 12:47:00 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.7ms | Allocations: 469)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2709)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-07-30 12:47:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/series" for 127.0.0.1 at 2020-07-30 12:47:12 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 15700)
+
+
