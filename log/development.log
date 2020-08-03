@@ -334,3 +334,1784 @@ Processing by SeriesController#index as HTML
 Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 15700)
 
 
+Started GET "/" for ::1 at 2020-07-30 18:13:06 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 459)
+Completed 200 OK in 29ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 2698)
+
+
+Started GET "/series" for ::1 at 2020-07-30 18:13:25 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 6885)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/alexandre/workspace-meedan/meeflix/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.0
+Time: 2032ms
+Built at: 07/30/2020 6:13:28 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 3673ms (Views: 3667.9ms | ActiveRecord: 0.8ms | Allocations: 30086)
+
+
+Started GET "/series/1" for ::1 at 2020-07-30 18:13:36 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.3ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 433)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 5718)
+
+
+Started GET "/graphiql" for ::1 at 2020-07-30 18:20:14 -0300
+  
+NameError (uninitialized constant GraphiQL):
+  
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:20:37 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 59.2ms | Allocations: 23011)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 0.0ms | Allocations: 26189)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.css
+and restart your server):
+    3:   <head>
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:6
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:20:40 -0300
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 4.3ms | Allocations: 3474)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 4067)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.css
+and restart your server):
+    3:   <head>
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:6
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:20:43 -0300
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 4.2ms | Allocations: 3450)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4035)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.css
+and restart your server):
+    3:   <head>
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:6
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/graphiql" for ::1 at 2020-07-30 18:35:00 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 3.4ms | Allocations: 3393)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 4658)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.css
+and restart your server):
+    3:   <head>
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:6
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/702ce5fadb6dc8dfc49feec26bc8def2" for ::1 at 2020-07-30 18:35:45 -0300
+Started PUT "/__web_console/repl_sessions/702ce5fadb6dc8dfc49feec26bc8def2" for ::1 at 2020-07-30 18:35:45 -0300
+Started GET "/graphiql" for ::1 at 2020-07-30 18:36:05 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 10.3ms | Allocations: 6877)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 10054)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.css
+and restart your server):
+    3:   <head>
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:6
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:37:44 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 829.3ms | Allocations: 77558)
+Completed 500 Internal Server Error in 839ms (ActiveRecord: 0.0ms | Allocations: 80737)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.js` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.js
+and restart your server):
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+   10:     <%= content_tag :div, 'Loading...', id: 'graphiql-container', data: {
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:141:in `block in javascript_include_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `javascript_include_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:7
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:37:49 -0300
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 12.4ms | Allocations: 5723)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 6316)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.js` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.js
+and restart your server):
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+   10:     <%= content_tag :div, 'Loading...', id: 'graphiql-container', data: {
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:141:in `block in javascript_include_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `javascript_include_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:7
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:37:50 -0300
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 10.2ms | Allocations: 5698)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 6283)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.js` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.js
+and restart your server):
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+   10:     <%= content_tag :div, 'Loading...', id: 'graphiql-container', data: {
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:141:in `block in javascript_include_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `javascript_include_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:7
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:39:27 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 41.0ms | Allocations: 10775)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 13953)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.js` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.js
+and restart your server):
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+   10:     <%= content_tag :div, 'Loading...', id: 'graphiql-container', data: {
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:141:in `block in javascript_include_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `javascript_include_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:7
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:41:58 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 796.0ms | Allocations: 92138)
+Completed 500 Internal Server Error in 806ms (ActiveRecord: 0.0ms | Allocations: 95317)
+
+
+  
+ActionView::Template::Error (Asset `graphiql/rails/application.js` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link graphiql/rails/application.js
+and restart your server):
+    4:     <title><%= GraphiQL::Rails.config.title || 'GraphiQL' %></title>
+    5: 
+    6:     <%= stylesheet_link_tag("graphiql/rails/application") %>
+    7:     <%= javascript_include_tag("graphiql/rails/application") %>
+    8:   </head>
+    9:   <body>
+   10:     <%= content_tag :div, 'Loading...', id: 'graphiql-container', data: {
+  
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:363:in `raise_unless_precompiled_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:348:in `find_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `each'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `detect'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:141:in `block in javascript_include_tag'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `map'
+sprockets-rails (3.2.1) lib/sprockets/rails/helper.rb:140:in `javascript_include_tag'
+graphiql-rails (1.7.0) app/views/graphiql/rails/editors/show.html.erb:7
+actionview (6.0.3.2) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.2) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.2) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.2) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.2) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.2) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.2) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.2) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.2) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.2) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.2) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/lib/ruby/2.5.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.2) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.2) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `public_send'
+railties (6.0.3.2) lib/rails/railtie.rb:190:in `method_missing'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.0.3.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/graphiql" for ::1 at 2020-07-30 18:46:15 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/alexandre/gems/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (Duration: 1675.9ms | Allocations: 1568278)
+Completed 200 OK in 1686ms (Views: 1679.0ms | ActiveRecord: 0.0ms | Allocations: 1571481)
+
+
+Started POST "/graphql" for ::1 at 2020-07-30 18:46:17 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 64ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 24406)
+
+
+Started POST "/graphql" for ::1 at 2020-07-30 18:47:04 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  series(id: 1) {\n    name\n    rating\n    description\n    createdAt\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  series(id: 1) {\n    name\n    rating\n    description\n    createdAt\n  }\n}", "variables"=>nil}}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/graphql/types/query_type.rb:19:in `series'
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 17046)
+
+
+Started GET "/" for ::1 at 2020-07-30 18:47:39 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 208)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 1126)
+
+
+Started GET "/series" for ::1 at 2020-07-30 18:47:47 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1282)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/alexandre/workspace-meedan/meeflix/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.0
+Time: 1811ms
+Built at: 07/30/2020 6:47:51 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 3156ms (Views: 3153.7ms | ActiveRecord: 0.2ms | Allocations: 10209)
+
+
+Started GET "/series/new" for ::1 at 2020-07-30 18:47:53 -0300
+Processing by SeriesController#new as HTML
+  Rendering series/new.html.erb within layouts/application
+  Rendered series/_form.html.erb (Duration: 14.3ms | Allocations: 6147)
+  Rendered series/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 6518)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 12484)
+
+
+Started POST "/series" for ::1 at 2020-07-30 18:48:09 -0300
+Processing by SeriesController#create as HTML
+  Parameters: {"authenticity_token"=>"CaZkyrpco/jJ9M6800Sr8xOU1cimtbg2wsDCMqmD67ZrF04YqEHnUsvAqMIjj6qPGbuywRlsFjoaT87lx7JQ1g==", "series"=>{"name"=>"Friends", "description"=>"It's about hmm, a group of friends", "rating"=>"5"}, "commit"=>"Create Series"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/series_controller.rb:30:in `block in create'
+  [1m[36mSeries Create (0.4ms)[0m  [1m[32mINSERT INTO "series" ("name", "description", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Friends"], ["description", "It's about hmm, a group of friends"], ["rating", 5.0], ["created_at", "2020-07-30 21:48:09.739052"], ["updated_at", "2020-07-30 21:48:09.739052"]]
+  ↳ app/controllers/series_controller.rb:30:in `block in create'
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/series_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/series/2
+Completed 302 Found in 13ms (ActiveRecord: 4.6ms | Allocations: 4681)
+
+
+Started GET "/series/2" for ::1 at 2020-07-30 18:48:09 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSeries Load (0.2ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 344)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6832)
+
+
+Started GET "/series" for ::1 at 2020-07-30 18:48:13 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 6818)
+
+
+Started POST "/graphql" for ::1 at 2020-07-30 18:48:20 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  series(id: 2) {\n    name\n    rating\n    description\n    createdAt\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  series(id: 2) {\n    name\n    rating\n    description\n    createdAt\n  }\n}", "variables"=>nil}}
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/graphql/types/query_type.rb:19:in `series'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1839)
+
+
+Started POST "/graphql" for ::1 at 2020-07-30 18:48:29 -0300
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  series(id: 4) {\n    name\n    rating\n    description\n    createdAt\n  }\n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  series(id: 4) {\n    name\n    rating\n    description\n    createdAt\n  }\n}", "variables"=>nil}}
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/graphql/types/query_type.rb:19:in `series'
+Couldn't find Series with 'id'=4
+/home/alexandre/gems/gems/activerecord-6.0.3.2/lib/active_record/core.rb:177:in `find'
+/home/alexandre/workspace-meedan/meeflix/app/graphql/types/query_type.rb:19:in `series'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema/field.rb:684:in `public_send'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema/field.rb:684:in `block in public_send_field'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema/field.rb:720:in `with_extensions'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema/field.rb:666:in `public_send_field'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema/field.rb:579:in `block in resolve'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema.rb:112:in `after_lazy'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema/field.rb:577:in `resolve'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:224:in `block (5 levels) in evaluate_selections'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/tracing.rb:66:in `trace'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:223:in `block (4 levels) in evaluate_selections'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/query.rb:353:in `block in with_error_handling'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/errors.rb:30:in `with_error_handling'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/query.rb:352:in `with_error_handling'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:222:in `block (3 levels) in evaluate_selections'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:384:in `resolve_with_directives'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:219:in `block (2 levels) in evaluate_selections'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:459:in `after_lazy'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:177:in `block in evaluate_selections'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:124:in `each'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:124:in `evaluate_selections'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter/runtime.rb:60:in `run_eager'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter.rb:73:in `block in evaluate'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/tracing.rb:66:in `trace'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter.rb:72:in `evaluate'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/interpreter.rb:45:in `begin_query'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:112:in `begin_query'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:83:in `block in run_as_multiplex'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:82:in `map'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:82:in `run_as_multiplex'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:61:in `block (2 levels) in run_queries'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:195:in `block in instrument_and_analyze'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:29:in `block (2 levels) in apply_instrumenters'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:46:in `block (2 levels) in each_query_call_hooks'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:41:in `each_query_call_hooks'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:45:in `block in each_query_call_hooks'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:44:in `each_query_call_hooks'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:27:in `block in apply_instrumenters'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/instrumentation.rb:26:in `apply_instrumenters'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:174:in `instrument_and_analyze'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:60:in `block in run_queries'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/tracing.rb:66:in `trace'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:58:in `run_queries'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/execution/multiplex.rb:48:in `run_all'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema.rb:1642:in `multiplex'
+/home/alexandre/gems/gems/graphql-1.11.1/lib/graphql/schema.rb:1613:in `execute'
+/home/alexandre/workspace-meedan/meeflix/app/controllers/graphql_controller.rb:15:in `execute'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/abstract_controller/base.rb:195:in `process_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:135:in `run_callbacks'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal/rescue.rb:22:in `process_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `block in instrument'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/notifications.rb:180:in `instrument'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/home/alexandre/gems/gems/activerecord-6.0.3.2/lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/abstract_controller/base.rb:136:in `process'
+/home/alexandre/gems/gems/actionview-6.0.3.2/lib/action_view/rendering.rb:39:in `process'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal.rb:190:in `dispatch'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_controller/metal.rb:254:in `dispatch'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/routing/route_set.rb:33:in `serve'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/journey/router.rb:49:in `block in serve'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/journey/router.rb:32:in `each'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/journey/router.rb:32:in `serve'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/tempfile_reaper.rb:15:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/etag.rb:27:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/conditional_get.rb:40:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/head.rb:12:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:266:in `context'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/session/abstract/id.rb:260:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/cookies.rb:648:in `call'
+/home/alexandre/gems/gems/activerecord-6.0.3.2/lib/active_record/migration.rb:567:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+/home/alexandre/gems/gems/web-console-4.0.4/lib/web_console/middleware.rb:132:in `call_app'
+/home/alexandre/gems/gems/web-console-4.0.4/lib/web_console/middleware.rb:28:in `block in call'
+/home/alexandre/gems/gems/web-console-4.0.4/lib/web_console/middleware.rb:17:in `catch'
+/home/alexandre/gems/gems/web-console-4.0.4/lib/web_console/middleware.rb:17:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+/home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/rack/logger.rb:37:in `call_app'
+/home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/rack/logger.rb:26:in `block in call'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:80:in `block in tagged'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:28:in `tagged'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/tagged_logging.rb:80:in `tagged'
+/home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/rack/logger.rb:26:in `call'
+/home/alexandre/gems/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/method_override.rb:24:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call'
+/home/alexandre/gems/gems/activesupport-6.0.3.2/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/static.rb:126:in `call'
+/home/alexandre/gems/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call'
+/home/alexandre/gems/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+/home/alexandre/gems/gems/webpacker-4.2.2/lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+/home/alexandre/gems/gems/rack-proxy-0.6.5/lib/rack/proxy.rb:57:in `call'
+/home/alexandre/gems/gems/railties-6.0.3.2/lib/rails/engine.rb:527:in `call'
+/home/alexandre/gems/gems/puma-4.3.5/lib/puma/configuration.rb:228:in `call'
+/home/alexandre/gems/gems/puma-4.3.5/lib/puma/server.rb:713:in `handle_request'
+/home/alexandre/gems/gems/puma-4.3.5/lib/puma/server.rb:472:in `process_client'
+/home/alexandre/gems/gems/puma-4.3.5/lib/puma/server.rb:328:in `block in run'
+/home/alexandre/gems/gems/puma-4.3.5/lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Completed 500 Internal Server Error in 5ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 3496)
+
+
