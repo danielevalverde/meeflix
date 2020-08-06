@@ -2115,3 +2115,58 @@ Couldn't find Series with 'id'=4
 Completed 500 Internal Server Error in 5ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 3496)
 
 
+Started GET "/" for 127.0.0.1 at 2020-08-06 16:44:45 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/ruby/2.5.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/ruby/2.5.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.5ms | Allocations: 477)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 2857)
+
+
+Started GET "/series" for 127.0.0.1 at 2020-08-06 16:44:50 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1068ms (Views: 1064.8ms | ActiveRecord: 0.5ms | Allocations: 1574213)
+
+
+Started GET "/series/1" for 127.0.0.1 at 2020-08-06 16:44:54 -0300
+Processing by SeriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeries Load (0.7ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  Rendering series/show.html.erb within layouts/application
+  Rendered series/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 436)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 13.2ms | ActiveRecord: 0.7ms | Allocations: 7657)
+
+
+Started DELETE "/series/1" for 127.0.0.1 at 2020-08-06 16:44:59 -0300
+Processing by SeriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YfJcICeSRx+2gQQqYPOLrrni8C1THJxmvYI7RkRnc8Y8ZmdjHhNIzzWNJNFDpEk2ZR+AHjvin+ZwQcUNml91rw==", "id"=>"1"}
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/series_controller.rb:67:in `set_series'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/series_controller.rb:57:in `destroy'
+  [1m[36mSeries Destroy (0.3ms)[0m  [1m[31mDELETE FROM "series" WHERE "series"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/series_controller.rb:57:in `destroy'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/series_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/series
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms | Allocations: 4350)
+
+
+Started GET "/series" for 127.0.0.1 at 2020-08-06 16:44:59 -0300
+Processing by SeriesController#index as HTML
+  Rendering series/index.html.erb within layouts/application
+  [1m[36mSeries Load (0.1ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  ↳ app/views/series/index.html.erb:17
+  Rendered series/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 6609)
+
+
